@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
-import com.tesseract.labproject.ProductListActivity;
 import com.tesseract.labproject.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -17,7 +17,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         final EditText etUsername=(EditText) findViewById(R.id.etUsername);
-        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+        Button login= (Button) findViewById(R.id.login);
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 username=etUsername.getText().toString();

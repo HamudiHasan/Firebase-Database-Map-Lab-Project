@@ -10,8 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tesseract.labproject.DetailsActivity;
-import com.tesseract.labproject.ProductListActivity;
+import com.tesseract.labproject.activity.DetailsActivity;
 import com.tesseract.labproject.R;
 import com.tesseract.labproject.javaClass.Product;
 

@@ -1,4 +1,4 @@
-package com.tesseract.labproject;
+package com.tesseract.labproject.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.tesseract.labproject.R;
 import com.tesseract.labproject.activity.LoginActivity;
 import com.tesseract.labproject.adaptar.Adapter;
 import com.tesseract.labproject.javaClass.Product;
@@ -52,9 +53,16 @@ public class DetailsActivity extends AppCompatActivity {
                         for (DataSnapshot child : dataSnapshot.getChildren()) {
                             Product pr = child.getValue(Product.class);
 
-                            if(pr.getTitle()=="aaaaa")
-                                child.getRef().setValue(new Product(title, des, "Taken", LoginActivity.username, "34","56"));
-                            Toast.makeText(getApplicationContext(),pr.getTitle(),Toast.LENGTH_SHORT).show();
+
+                            if(pr.getTitle().equals(title)){
+                                pr.setStatus("Taken");
+                                child.getRef().setValue(pr);
+                                Toast.makeText(getApplicationContext(),"Sucessfully Updated",Toast.LENGTH_SHORT).show();
+                            }
+
+
+
+
 
 
                         }
